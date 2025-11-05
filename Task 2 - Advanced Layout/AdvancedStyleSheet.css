@@ -1,0 +1,242 @@
+/* Imported Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+/* Default styling for the entire document */
+body {
+    color: #070410; /* Text Color */
+    background-color: #070410; /* Background Color */
+    font-family: 'Lato', sans-serif; /* Primary Font */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Site title styling */
+h1 {
+    margin: 0; /* Remove default margin */
+    padding: 16px; /* Add padding around text */
+    font-family: 'Teko', sans-serif;  /* Font for logo */
+    font-size: 1.2em; /* Base font size */
+    justify-content: left; /* Align content to left */
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+/* Movie titles styling */
+h2 {
+    margin: 16px;
+    font-family: 'Teko', sans-serif;
+}
+
+/* Movie description paragraph styling */
+p {
+    margin: 16px; /* Add margin around paragraphs */
+}
+
+/* Styling for all buttons */
+button {
+    background-color: #4DCCBD;
+    font-family: 'Teko', sans-serif;
+    margin: 16px;
+    padding: 0 16px; /* Horizontal padding only */
+    border-radius: 20px; /* Rounded corners */
+}
+
+/* Header section styling */
+header {
+    background-color: #EEF36A;
+    margin: 0;
+    padding: 0;
+    width: 100%; /* Full width header */
+    font-size: 2em;
+    display: flex; /* Flexbox layout */
+    justify-content: space-between; /* Space between elements */
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    align-items: center; /* Center items vertically */
+}
+
+/* Navigation styling */
+nav {
+    display: none; /* Hide navigation on mobile */
+}
+
+/* Specific styling for button in header */
+header button {
+    font-size: 1.2em; /* Slightly smaller than header text */
+    justify-content: end; /* Align to the right */
+}
+
+/* Main content area styling */
+main {
+    background-color: #231651;
+    margin: 0;
+    padding: 0;
+}
+
+/* Image responsive styling */
+img {
+    max-width: 100%; /* Responsive images that don't overflow */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove inline image spacing */
+}
+
+/* Individual movie item container */
+.movie-item {
+    background-color: #EEF36A;
+    margin: 16px 0; /* Vertical margin only */
+    font-size: 1.5em;
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: flex-start; /* Align content to top */
+}
+
+/* Movie item button sizing */
+.movie-item button {
+    font-size: 2em; /* Extra large buttons for movie items */
+}
+
+/* Adjusts layout for tablet sized devices */
+@media (min-width: 720px) {  /* Styling applied on breakpoints 720px and up */
+    header h1, header button {
+        font-size: 1.5em; /* Slightly smaller header text */
+    }
+
+    /* Show navigation on tablet and desktop */
+    nav {
+        display: flex; /* Show navigation */
+        align-items: center; /* Center navigation items */
+    }
+    
+    /* Navigation list styling */
+    nav ul {
+        margin: 0;
+        list-style: none; /* Remove bullet points */
+        display: flex; /* Horizontal layout */
+        gap: 16px; /* Space between navigation items */
+        padding: 0 16px; /* Horizontal padding */
+    }
+
+    /* Navigation link styling */
+    nav li a {
+        text-decoration: none; /* Remove underline */
+        color: inherit; /* Inherit color from parent */
+        font-size: 0.5em; /* Smaller font size for nav items */
+        font-family: 'Teko', sans-serif;
+        padding: 8px 16px; /* Clickable area padding */
+        white-space: nowrap;
+    }
+
+    /* Main content grid layout for tablet */
+    main {
+        padding: 32px;
+        display: grid; /* CSS Grid layout */
+        grid-template-columns: repeat(2, 1fr); /* 2-column grid */
+        grid-template-rows: repeat(3, 1fr); /* 3 rows */
+        gap: 16px;
+    }
+
+    /* Movie item adjustments for grid */
+    .movie-item {
+        margin: 0; /* Remove margin since gap handles spacing */
+        height: 100%; /* Fill grid cell height */
+        box-shadow: 5px 7px 10px #4DCCBD;
+    }
+
+    /* Maintain large button size */
+    .movie-item button {
+        font-size: 2em;
+    }
+}
+
+/* Adjusts layout for desktop sized devices */
+@media (min-width: 1024px) {   /* Styling applied on breakpoints 1024px and up */
+    header h1, header button {
+        font-size: 1.5em;
+    }
+
+    /* Larger navigation text on desktop */
+    nav li a {
+        font-size: 0.7em;
+    }
+
+    /* Advanced main content layout */
+    main {
+        background-color: #070410;
+        max-width: 900px; /* Maximum width */
+        margin: 49px auto; /* Center container with top/bottom margin */
+        grid-template-rows: repeat(5, auto); /* 5 flexible rows */
+        gap: 48px; /* Larger gaps between items */
+    }
+
+    /* Special section styling for the three last movies */
+    .movie-section {
+        grid-column: 1/3; /* Span both columns */
+        display: grid; /* Nested grid */
+        grid-template-columns: repeat(2, 1fr); /* 2-column nested grid */
+        grid-template-rows: repeat(2, auto); /* 2-row nested grid */
+        gap: 16px; /* Gap within nested grid */
+    }
+
+    /* Styling for movie posters inside movie sections */
+    .movie-section img {
+        margin: 0;
+        grid-column: 1; /* Place in first column */
+        grid-row: 1/4; /* Span all rows */
+        width: 450px; /* Fixed width */
+        height: 100%; /* Full height of container */
+        object-fit: cover; /* Crop image to fit container */
+    }
+
+    /* Specific styling for Roger Rabbit */
+    #roger-rabbit {
+        grid-column: 1/3; /* Span full width */
+        grid-row: 1; /* Place in first row */
+        display: grid; /* Nested grid for complex layout */
+        grid-template-columns: repeat(3, 1fr); /* 3-column nested grid */
+        grid-template-rows: repeat(3, auto); /* 3-row nested grid */
+        gap: 16px; /* Gap within nested grid */
+    }
+
+    /* Roger Rabbit poster styling */
+    #roger-rabbit img {
+        margin: 0;
+        grid-column: 1/4;
+        grid-row: 1;
+        width: 900px;
+        height: 400px;
+        object-fit: cover; /* Crop image to fit */
+        object-position: center; /* Center the image crop */
+    }
+
+    /* Featured movie title positioning */
+    #roger-rabbit h2 {
+        margin-bottom: 0;
+        grid-column: 1/3;
+        grid-row: 2;
+    }
+
+    /* Featured movie description positioning */
+    #roger-rabbit p {
+        margin-top: 0;
+        grid-column: 1/3;
+        grid-row: 3;
+    }
+
+    /* Featured movie button positioning */
+    #roger-rabbit button {
+        grid-column: 3/4;
+        grid-row: 2/4;
+    }
+
+    /* Specific grid row assignments for movie sections */
+    #hidden-figures {
+        grid-row: 3;
+    }
+
+    #palm-springs {
+        grid-row: 4;
+    }
+
+    #barbie {
+        grid-row: 5;
+    }
+}
